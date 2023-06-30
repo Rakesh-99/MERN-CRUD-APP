@@ -15,6 +15,8 @@ const path = require('path');
 app.use(cors());
 app.use(express.json());
 app.use('/products/', productRouter.router);
+app.use('/user/', productRouter.router);
+
 app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)));
 app.use('*', (req, res) => {
